@@ -6,10 +6,10 @@ export default class Car {
   }
 
   static get [Symbol.species]() {
-    return this.prototpye.constructor;
+    return this;
   }
 
   cloneCar() {
-    return new this.constructor[Symbol.species]();
+    return new (this.constructor[Symbol.species])();
   }
 }
